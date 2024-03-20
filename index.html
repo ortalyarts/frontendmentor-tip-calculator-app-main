@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="author" content="Ortalyarts" />
+    <meta
+      name="description"
+      content="Article preview Component Solution for FrontendMentor.io"
+    />
+    <meta
+      name="keywords"
+      content="Frontend Mentor, Frontend, Mentor, calculator app, Tip calculator app, Ortaly, FrontendMentor.io, Ortalyarts, Front end, developer"
+    />
+    <meta
+      property="og:title"
+      content="Frontend Mentor | Tip calculator app"
+    />
+    <meta
+      property="og:description"
+      content="Frontend Mentor | Tip calculator app"
+    />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <title>Frontend Mentor | Tip calculator app</title>
+
+</head>
+<body>
+  <div class="main-container full-height">
+    <div class="logo">
+      <img src="./assets/images/logo.svg" alt="Logo" width="86.66" height="53.14">
+    </div>
+    <main>
+      <form id="form" aria-labelledby="hiddenH1" novalidate>
+        <div class="form-holder">
+          <h1 id="hiddenH1" class="invisible">Tip calculator</h1>
+          <div class="input-holder">
+            <label class="visible-label" for="bill">Bill</label>
+            <p class="error" aria-live="polite">Can't be zero</p>
+            <input type="text" id="bill" class="text-input bill" placeholder="0">
+          </div>
+
+          <fieldset role="radiogroup" aria-labelledby="legend1">
+            <legend id="legend1" class="visible-label">Select Tip %</legend>
+            <div class="tips-holder">
+              <label class="radio-label" for="tip1">
+                <span>5%</span>
+                <input class="radio-input tip-input" type="radio" value="5" name="tip" id="tip1">
+              </label>              
+              <label class="radio-label" for="tip2">
+                <span>10%</span>
+                <input class="radio-input tip-input" type="radio" value="10" name="tip" id="tip2">
+              </label>              
+              <label class="radio-label" for="tip3">
+                <span>15%</span>
+                <input class="radio-input tip-input" type="radio" value="15" name="tip" id="tip3">
+              </label>              
+              <label class="radio-label" for="tip4">
+                <span>25%</span>
+                <input class="radio-input tip-input" type="radio" value="25" name="tip" id="tip4">
+              </label>              
+              <label class="radio-label" for="tip5">
+                <span>50%</span>
+                <input class="radio-input tip-input" type="radio" value="50" name="tip" id="tip5">
+              </label>            
+              <label class="custom-label" for="tip6" aria-labelledby="a-l-tip6">                  
+                <span class="invisible" id="a-l-tip6">% tip</span>
+                <input type="text" id="tip6" class="custom-tip " placeholder="Custom">
+              </label> 
+            </div>
+        </fieldset>
+
+        <div class="input-holder">
+          <label class="visible-label" for="number-people">Number of People</label>
+          <p class="error" aria-live="polite">Can't be zero</p>
+          <input type="text" id="number-people" class="text-input number-people" placeholder="0">
+        </div>
+  
+      </div>
+
+      <div class="result-holder">
+        <div>
+          <div id="tip-result-heading" class="result-row" focusable="true" tabindex="0" >
+            <p aria-labelledby="calculated-tip">Tip Amount<span>/ person</span></p>
+            <div id="calculated-tip" class="result calculated-tip" aria-live="polite">$0.00</div>
+          </div>
+          <div id="total-result-heading" class="result-row" focusable="true" tabindex="0" >
+            <p aria-labelledby="calculated-sum">Total<span>/ person</span></p>
+            <div id="calculated-sum" class="result calculated-sum" aria-live="polite">$0.00</div>
+          </div>
+        </div>
+        <button id="reset" type="button" class="reset-button" disabled>Reset</button>
+  
+      </div>
+    </form>
+    </main>
+  </div>
+  
+
+  <footer>
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/ortalyarts">ortalyArts</a>.
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

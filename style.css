@@ -1,0 +1,359 @@
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd, ul {
+  margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+  }
+  /* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+img {
+  vertical-align: middle;
+}
+/* General STYLE */
+body {
+
+  --color1:#00474B;
+  --color2:#547878;
+  --color3:#26C2AE;
+  --color3b:#9FE8DF;
+  --color4: #00474B;
+  --color5:#C5E4E7;
+  --color6:#F3F9FA;
+  --color7:#5E7A7D;
+  --color8:#E17457;
+  --color9:#0D686D;
+  --shadow: rgba(79, 166,175, 20.1%);
+
+
+  --sansserif: 'space mono', sans-serif;
+
+  padding:0 1rem;
+  text-rendering: optimizeSpeed;
+  text-align:left; 
+  font-family: var(--sansserif);
+  background: var(--color5);
+  color:var(--color7);
+}
+
+@font-face {
+  font-family: 'space mono';
+  src: url('./assets/fonts/SpaceMono-Regular.woff2') format('woff2'),
+       url('./assets/fonts/SpaceMono-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'space mono';
+  src: url('./assets/fonts/SpaceMono-Bold.woff2') format('woff2'),
+       url('./assets/fonts/SpaceMono-Bold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+}
+h1, h2, h3, ul {
+  padding:0;
+}
+.hide {
+  display:none;
+}
+
+
+
+.headingL {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+.headingM {
+  font-size: 1.625rem;
+  font-weight: 700;
+}
+.headingS h2, .headingS h3, .headingS h4 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.bodyM p{
+  font-size: 1.125rem;
+  line-height:1.75rem;
+  font-weight: 500;
+  color:var(--color8);
+}
+
+.main-container {
+  max-width:23.438rem;
+  margin: 0 auto;
+  position:relative;
+  padding:0;
+}
+
+.logo {
+  margin:2rem auto 0 auto;
+  width:5.416rem;
+  height:3.321rem;
+  text-align:center;
+}
+.logo img{
+  width:100%;
+  height:auto;
+}
+main {
+  margin-top:2rem;
+  background:white;
+  border-radius: 1.563rem;
+  padding:2rem;
+  box-shadow: 0 2rem 2.688rem 0 var(--shadow);
+}
+#form {
+  display:grid;
+}
+.form-holder {
+  padding:0.95rem;
+}
+/* === Restyling inputs */
+.visible-label {
+  color: var(--color7);
+  font-size: 1rem;
+  font-weight:700;
+}
+legend {
+  margin-bottom:1rem;
+}
+.tips-holder {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:0.875rem;
+}
+#form fieldset{
+  border:0;
+  padding:0;
+  margin:2.5rem 0;
+  
+}
+.radio-label {
+  display: block;
+  position: relative;
+  text-align: center;
+  background: var(--color4);
+  padding: 0.4rem 0;
+  border-radius: 0.313rem;
+  cursor: pointer;
+  
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: 0.2s;
+  transform: scale(1);
+}
+/* Hide the browser's default radio button */
+.radio-label input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.radio-label span{
+  background:none;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight:700;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.radio-label:hover, .radio-label:has(input:focus-visible) {
+  transform: scale(0.97);
+  color: var(--color1);
+}
+.radio-label:hover {
+  background: var(--color3b);
+}
+.radio-label:hover span,
+.radio-label:has(input:focus-visible) span{
+  color: var(--color4);
+}
+.radio-label:has(input:checked), .radio-label:has(input:focus-visible)  {
+  background: var(--color3);
+}
+.custom-label, .text-input {
+  background: var(--color6);
+  border-radius: 0.313rem;
+  border: 2px solid var(--color6);
+}
+.custom-label:has(input:focus-visible), .text-input:focus-visible {
+  border: 2px solid var(--color3);
+}
+.invisible {
+  display:inline-block;
+  opacity:0;
+  width:0;
+  height:0;
+  position:absolute;
+}
+.custom-tip, .text-input {
+  text-align: right;
+  padding-right:0.5rem;
+  height: 3rem;
+}
+.custom-tip{
+  margin-top:0.2rem;
+  width: 100%;
+  height: 2.2rem;
+  background: rgba(0,0,0,0%);
+  border:none;
+  outline:none;
+}
+.custom-tip, .custom-tip::placeholder,  .text-input, .text-input::placeholder {
+  color:var(--color2);
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight:700;
+}
+
+.text-input::placeholder {
+  text-align:right;
+  color: var(--color4);
+  opacity:0.3;
+}
+.bill, .number-people {
+  background-image: url(./assets/images/icon-dollar.svg);
+  background-position: left 1rem center;
+  background-repeat: no-repeat;
+  width:100%;
+  margin-top: 0.375rem;
+  text-align: right;
+  padding-right:1.2rem;
+}
+.number-people {
+  background-image: url(./assets/images/icon-person.svg);
+}
+/* == End Restyling inputs */
+
+.result-holder {
+  background: var(--color4);
+  border-radius: 0.938rem;
+  padding:2.7rem 2.5rem 2.5rem 2.5rem;
+  display: grid;
+  align-items: start;
+  align-content: space-between;
+}
+.result-row {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  height: 4.469rem;
+  margin-bottom:1.5rem;
+}
+.result-row:focus-visible {     
+  outline:none;
+  border:none;
+  background:rgba(0,0,0, 0.2);
+}
+.result-row p[aria-labelledby]{
+  color:white;
+font-size:1rem;
+}
+.result-row p[aria-labelledby] span {
+  font-size: 0.813rem;
+  color: var(--color2);
+  font-weight: 700;
+  display:block;
+}
+.result {
+  color: var(--color3);
+  font-size: 2rem;
+  letter-spacing: -0.67px;
+  font-weight:700;
+  text-align: right;
+}
+
+.reset-button{
+  width:100%;
+  color: var(--color1);
+  font-size: 1.25rem;
+  font-weight:700;
+  background: var(--color3);
+  padding: 0.6rem 0;
+  border-radius: 0.313rem;
+  cursor: pointer;
+  border:none;
+  outline:none;
+  transition: 0.2s;
+  transform: scale(1);
+  align-self: end;
+  
+}
+.reset-button:hover, .reset-button:focus-visible {
+  color: var(--color4);
+  background: var(--color3b);
+}
+.reset-button[disabled] {
+  background: var(--color9);
+  cursor:not-allowed;
+}
+/* ==== Error == */
+.error{
+  color: var(--color8);
+  font-size:1rem;
+  font-weight:700;
+  text-align:right;
+  float:right;
+  display:none;
+}
+.active {
+  display:inline;
+}
+.input-holder:has(.active) .text-input {
+  border:1px solid var(--color8);
+}
+footer{
+  margin-top:3.6rem;
+  padding-bottom:2rem;
+  text-align: center;
+  font-size:0.8rem;
+}
+footer a {
+  color: var(--color1);
+}
+
+
+@media screen and (min-width:55rem){
+
+  .main-container{
+    max-width:57.5rem;
+    
+  }
+  main {
+    margin-top:5.491rem;
+  }
+  .full-height {
+    height:75vh;
+  }
+  .logo{
+    margin-top:10.188rem;
+  }
+  #form {
+    grid-template-columns: 1fr 1fr;
+    gap:1.875rem;
+  }
+  .tips-holder {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .result {
+    font-size: 3rem;
+    letter-spacing: -1px;
+  }
+}
